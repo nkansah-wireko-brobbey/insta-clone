@@ -11,8 +11,6 @@ export default function HomeLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
@@ -22,7 +20,5 @@ export default function HomeLayout({
             </div>
           </SidebarInset>
         </SidebarProvider>
-      </body>
-    </html>
   )
 }
