@@ -1,5 +1,5 @@
-import { Home, LayoutDashboard, Settings, Users } from "lucide-react"
-
+import { BookMarkedIcon, ChartBar, FolderArchiveIcon, HomeIcon, Projector, Send, SettingsIcon } from "lucide-react"
+import ProfileAvatar from "./profile-avatar"
 import {
   Sidebar,
   SidebarContent,
@@ -12,28 +12,44 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import Profile from "./profile"
 
 // Sample navigation data
 const navigationItems = [
   {
-    title: "Dashboard",
-    icon: LayoutDashboard,
+    title: "Feed",
+    icon: HomeIcon,
     href: "/dashboard",
     isActive: true,
   },
   {
-    title: "Home",
-    icon: Home,
+    title: "Explore",
+    icon: FolderArchiveIcon,
     href: "/",
   },
   {
-    title: "Users",
-    icon: Users,
+    title: "My Favorites",
+    icon: BookMarkedIcon,
     href: "/users",
   },
   {
+    title: "Direct",
+    icon: Send,
+    href: "/settings",
+  },
+  {
+    title: "IG TV",
+    icon: Projector,
+    href: "/settings",
+  },
+  {
+    title: "Stats",
+    icon: ChartBar,
+    href: "/settings",
+  },
+  {
     title: "Settings",
-    icon: Settings,
+    icon: SettingsIcon,
     href: "/settings",
   },
 ]
@@ -41,14 +57,14 @@ const navigationItems = [
 export default function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader className="border-b">
-        <div className="flex h-14 items-center px-4">
-          <span className="text-xl font-bold">MyApp</span>
+      <SidebarHeader className="border-b h-[150px]">
+        <div className=" px-4 border">
+              <Profile />
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          {/* <SidebarGroupLabel>Navigation</SidebarGroupLabel> */}
           <SidebarGroupContent>
             <SidebarMenu>
               {navigationItems.map((item) => (
