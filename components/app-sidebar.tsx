@@ -1,5 +1,6 @@
-import { BookMarkedIcon, ChartBar, FolderArchiveIcon, HomeIcon, Projector, Send, SettingsIcon } from "lucide-react"
-import ProfileAvatar from "./profile-avatar"
+import { BookMarkedIcon, ChartBar, FolderArchiveIcon, HomeIcon, Instagram, Projector, Send, SettingsIcon } from "lucide-react"
+import { FaInstagram } from "react-icons/fa";
+
 import {
   Sidebar,
   SidebarContent,
@@ -57,9 +58,15 @@ const navigationItems = [
 export default function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader className="border-b h-[150px]">
-        <div className=" px-4 border">
-              <Profile />
+      <SidebarHeader className="border-b h-[200px]">
+        <div className="dark:text-white flex justify-center gap-2">
+
+          <FaInstagram size={24}/>
+
+          <h3 className="text-center text-l font-semibold tracking-tight mb-5"> Instagram</h3>
+        </div>
+        <div className=" px-4">
+          <Profile imgUrl={""} />
         </div>
       </SidebarHeader>
       <SidebarContent>
