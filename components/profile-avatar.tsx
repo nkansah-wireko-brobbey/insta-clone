@@ -6,7 +6,7 @@ import React from 'react'
 const ProfileAvatar = ({imgUrl}:{imgUrl: string}) => {
     return (
         <div className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-[2px] rounded-full">
-        <Avatar className="size-15 rounded-full">
+        <Avatar className="size-15 rounded-full border-2 border-background">
           <AvatarImage src={imgUrl} alt="User" className="rounded-full" />
           <AvatarFallback>
             <User className="h-4 w-4" />
