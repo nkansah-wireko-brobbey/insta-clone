@@ -1,18 +1,28 @@
-"use client"
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
-
+import UserProfile from "@/components/user-profile"
+import { profiles } from "../Mocks/profiles"
+import { Badge } from "@/components/ui/badge"
 
 export default function HomePage() {
-const [active, setActive] = useState(false)
+    const users = profiles
 
     return (
         <div>
-            <div className={`border ${active ?  "border-red-500 bg-red-500/10 p-3 text-red-700":"border-yellow-500 bg-yellow-500/10 p-3 text-yellow-700"} rounded`}>This is a trial run to check the buttons</div>
-            <Button className="rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 my-10 cursor-pointer hover:opacity-95" onClick={()=>setActive(!active)}>
-                Toggle
-            </Button>
-            <div></div>
+            <div className="flex items-center justify-center space-x-3">
+
+                {
+                    users.map((user) => (
+                        <UserProfile key={user.id} imgUrl={user.imgUrl} name={user.name} />
+                    ))
+                }
+            </div>
+            <div className="flex justify-between items-center mt-5 border w-3xl mx-auto p-4 rounded-lg">
+                <h3 className="text-lg font-semibold tracking-tight">Feeds</h3>
+                <div className="space-x-2">
+                    <Badge variant="outline" className="rounded-full w-18">Latest</Badge>
+                    <Badge className="rounded-full w-18">Popular</Badge>
+                </div>
+
+            </div>
         </div>
     )
 }
